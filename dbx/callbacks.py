@@ -77,6 +77,7 @@ def execute_parameters_callback(_, value: str) -> Optional[str]:
 def launch_parameters_callback(_, value: str) -> Optional[str]:
     if value:
         try:
+            print(value)
             json.loads(value)
         except json.JSONDecodeError as e:
             dbx_echo(":boom: Provided parameters payload cannot be parsed as JSON")
